@@ -25,10 +25,18 @@
       <div class="container main">
         <div class="main__mobile">
           <a href="#" class="logo"><span class="logo__decoration">Web</span>Studio</a>
-          <button type="button" class="mobile-btn is-open">
+          <button type="button" class="mobile-btn is-open" data-menu>
             <svg width="40" height="40" aria-label="Переключатель мобильного меню">
-              <use class="mobile-btn__cross" href="./img/icons/mobile-button.svg#cross"></use>
-              <use class="mobile-btn__menu" href="./img/icons/mobile-button.svg#menu"></use>
+              <use
+                class="mobile-btn__cross"
+                href="./img/icons/mobile-button.svg#cross"
+                data-menu-close
+              ></use>
+              <use
+                class="mobile-btn__menu"
+                href="./img/icons/mobile-button.svg#menu"
+                data-menu-open
+              ></use>
             </svg>
           </button>
         </div>
@@ -547,5 +555,6 @@
     </div>
 
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

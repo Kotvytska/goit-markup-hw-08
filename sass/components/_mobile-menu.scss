@@ -17,8 +17,11 @@
 .mobile-btn__cross {
   display: none;
 }
-.main__mobile {
+
+.main {
   position: relative;
+}
+.main__mobile {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,10 +29,13 @@
   width: 100%;
 }
 .main__nav {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 100%;
   left: 0;
+  width: 100%;
   background: #fff;
+  padding-left: 40px;
+  z-index: 999;
 }
 .navigation {
   margin-bottom: 302px;

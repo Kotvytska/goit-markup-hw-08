@@ -163,8 +163,11 @@ body {
   display: none;
 }
 
-.main__mobile {
+.main {
   position: relative;
+}
+
+.main__mobile {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -179,10 +182,13 @@ body {
 }
 
 .main__nav {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 100%;
   left: 0;
+  width: 100%;
   background: #fff;
+  padding-left: 40px;
+  z-index: 999;
 }
 
 .navigation {
