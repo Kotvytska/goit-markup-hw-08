@@ -39,12 +39,12 @@ img {
   overflow: hidden;
 }
 
-.logo, .nav__link, .contacts__link, .mobile-social__link, .social__link-icon, .clients__link, .footer__logo, .footer__contacts-link, .social-join__link {
+.logo, .mobile__nav-link, .mobile-contacts__link, .mobile-social__link, .nav__link, .contacts__link, .social__link-icon, .clients__link, .footer__logo, .footer__contacts-link, .social-join__link {
   text-decoration: none;
   display: inline-block;
 }
 
-.nav, .contacts, .mobile-social, .features, .we-do, .card, .social, .clients, .footer__contacts-list, .social-join {
+.mobile__nav, .mobile-contacts, .mobile-social, .nav, .contacts, .features, .we-do, .card, .social, .clients, .footer__contacts-list, .social-join {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -137,8 +137,22 @@ body {
   color: var(--accent-color);
 }
 
+.main__mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 480px;
+  height: 60px;
+}
+
 .mobile-btn {
-  display: inline-block;
+  display: block;
   margin: 0;
   padding: 0;
   border: 0;
@@ -154,52 +168,46 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .mobile-btn {
+  .mobile-btn__menu {
     display: none;
   }
 }
 
-.mobile-btn__cross {
-  display: none;
-}
-
-.main {
-  position: relative;
-}
-
-.main__mobile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  min-height: 60px;
-  width: 100%;
-}
-
-.main__nav {
+.mobile {
   position: fixed;
-  top: 100%;
+  top: 0;
   left: 0;
-  width: 100%;
-  background: #fff;
+  width: 100vw;
+  height: 100vw;
+  padding-top: 48px;
+  padding-bottom: 48px;
   padding-left: 40px;
+  background: teal;
   z-index: 999;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
 }
 
-.navigation {
-  margin-bottom: 302px;
+.mobile.is-open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
-.nav__item:not(:last-child) {
+.mobile-btn__cross {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.mobile__nav-item:not(:last-child) {
   margin-bottom: 32px;
 }
 
-.nav__link {
+.mobile__nav-item:last-child {
+  margin-bottom: 306px;
+}
+
+.mobile__nav-link {
   position: relative;
   display: block;
   font-size: 40px;
@@ -211,15 +219,11 @@ body {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav__link:focus, .nav__link:hover {
+.mobile__nav-link:focus, .mobile__nav-link:hover {
   color: var(--accent-color);
 }
 
-.nav__link--current {
-  color: var(--accent-color);
-}
-
-.header__contacts {
+.mobile__mobile-contacts {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -229,12 +233,12 @@ body {
           flex-direction: column-reverse;
 }
 
-.contacts__item:not(:last-child) {
+.mobile-contacts__item:not(:last-child) {
   margin-top: 32px;
   margin-bottom: 64px;
 }
 
-.contacts__link {
+.mobile-contacts__link {
   color: var(--primary-text-color);
   font-weight: 500;
   font-size: 24px;
@@ -244,24 +248,13 @@ body {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.contacts__link:hover, .contacts__link:focus {
+.mobile-contacts__link:hover, .mobile-contacts__link:focus {
   color: var(--accent-color);
 }
 
 @media screen and (max-width: 767px) {
-  .contacts__link:hover, .contacts__link:focus {
+  .mobile-contacts__link:hover, .mobile-contacts__link:focus {
     font-size: 34px;
-  }
-}
-
-.contacts__icon {
-  display: none;
-}
-
-@media screen and (min-width: 768px) {
-  .contacts__icon {
-    margin-right: 10px;
-    fill: currentColor;
   }
 }
 
@@ -269,7 +262,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 48px;
 }
 
 .mobile-social__item:not(:last-child) {
@@ -289,6 +281,114 @@ body {
 
 .header {
   border-bottom: 1px solid #ececec;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .header__main {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header__nav {
+  margin-left: 93px;
+}
+
+.nav__item + .nav__item {
+  margin-left: 50px;
+}
+
+.nav__link {
+  position: relative;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: var(--title-text-color);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav__link:focus, .nav__link:hover {
+  color: var(--accent-color);
+}
+
+.nav__link--current {
+  color: var(--accent-color);
+}
+
+.nav__link--current::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: inline-block;
+  height: 4px;
+  width: 100%;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.header__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+}
+
+.contacts__item + .contacts__item {
+  margin-left: 50px;
+}
+
+.contacts__link {
+  color: var(--primary-text-color);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts__link:hover, .contacts__link:focus {
+  color: var(--accent-color);
+}
+
+.contacts__icon {
+  margin-right: 10px;
+  fill: currentColor;
 }
 
 .hero {
