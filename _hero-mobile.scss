@@ -48,32 +48,3 @@
       url(../img/tablet@2x.jpg);
   }
 }
-
-.hero__title {
-  color: var(--primary-white-color);
-
-  font-weight: 900;
-  font-size: 26px;
-  line-height: 1.62;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-
-  margin-bottom: 30px;
-  @media screen and (min-width: 1200px) {
-    font-size: 44px;
-    line-height: 1.36;
-  }
-}
-.hero__button--primary {
-  @extend %button;
-  background: var(--accent-color);
-  color: var(--primary-white-color);
-  padding: 10px 32px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:focus,
-  &:hover {
-    background: #188ce8;
-  }
-}

@@ -13,9 +13,6 @@
     align-items: baseline;
     justify-content: space-around;
   }
-  //
-  //
-  //   flex-wrap: wrap;
 }
 
 .footer__logo {
@@ -110,7 +107,7 @@
 .wrap__form-input {
   display: inline-block;
   background: transparent;
-  width: 450px;
+
   padding: 15px 0 15px 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--border-radius);
@@ -121,6 +118,9 @@
 
   &:focus {
     border-color: var(--accent-color);
+  }
+  @media screen and (min-width: 480px) {
+    width: 450px;
   }
   @media screen and (max-width: 1199px) {
     margin-bottom: 20px;

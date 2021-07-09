@@ -8,9 +8,20 @@
   background: var(--primary-white-color);
   z-index: 999;
   overflow: auto;
-  transform: translateX(100%);
+  transform: translateX(200%);
   &.is-open {
     transform: translateX(0);
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.container-mobile {
+  @media screen and (max-width: 767px) {
+    width: 480px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .main__mobile {
@@ -19,6 +30,9 @@
   justify-content: space-between;
   width: 480px;
   height: 60px;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 .mobile-navigation {
   display: flex;
