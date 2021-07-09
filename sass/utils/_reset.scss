@@ -10,6 +10,8 @@ p {
 
 img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 .visually-hidden:not(:focus):not(:active) {
   width: 1px;
