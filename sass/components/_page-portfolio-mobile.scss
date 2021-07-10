@@ -56,11 +56,13 @@
 /* progects */
 .progects {
   @extend %list;
-  margin-right: -15px;
+
   margin-bottom: -15px;
   @media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: -15px;
+    margin-right: -15px;
   }
 }
 
@@ -113,7 +115,7 @@
   top: 0;
   left: 0;
   padding: 63px 24px;
-  overflow: auto;
+  //   overflow: hidden;
 
   width: 100%;
   height: 100%;
@@ -137,6 +139,9 @@
   padding-right: 24px;
   padding-bottom: 20px;
   padding-left: 24px;
+}
+.progects__img {
+  margin: 0 auto;
 }
 
 .progects__title {
