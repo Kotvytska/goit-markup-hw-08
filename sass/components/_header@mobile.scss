@@ -1,11 +1,7 @@
 .header {
   border-bottom: 1px solid #ececec;
 }
-.main {
-  display: flex;
-  align-items: center;
-  // justify-content: space-between;
-}
+
 .header__main {
   @media screen and (max-width: 767px) {
     display: none;
